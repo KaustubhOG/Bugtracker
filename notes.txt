@@ -1,0 +1,33 @@
+we added markdown editor from react-simplemde-editor
+Make the SimpleMDE (Markdown Editor) match your dark theme — because by default, it comes with a white/light theme.
+
+We got a problem on mark_down_editor which is not default black screen for making it dark we did this 
+Created a custom CSS file → editor-dark.css
+This overrides the default styles of SimpleMDE to make the background dark and text white.
+Applied dark styles to:
+.CodeMirror → the text editor box
+.editor-toolbar → the toolbar above the editor
+.CodeMirror-cursor → the blinking cursor
+Imported that CSS in your component file so it gets applied when the component loads.
+
+
+for form validation we used react-hook-form
+this was our function before the react-form const NewIssuePage = () => {
+  const { register } = useForm<IssueForm>()
+  const [markdown, setmarkdown] = useState('')
+  return (
+    <div className="space-y-4">
+      <TextField.Root placeholder="Issue Title"  />
+      <SimpleMDE
+        placeholder='Description'
+        value={markdown}
+        onChange={setmarkdown}
+        options={{ autofocus: true }}
+      />
+      <Button>Submit Issue</Button>
+    </div>
+  )
+}
+
+after using this 
+
